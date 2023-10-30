@@ -1,9 +1,14 @@
 #!/bin/bash
+
+which make
+
+pip install jupyter nbconvert
+
 LOCAL_POSTS="`pwd`/posts"
 NEXTJS_POSTS="`pwd`/site/posts"
 
 # Copying files from local posts folder into NextJS project posts folder
-cp "$LOCAL_POSTS"* $NEXTJS_POSTS
+cp -r "$LOCAL_POSTS"* $NEXTJS_POSTS
 
 cd site
 
@@ -35,7 +40,7 @@ for file in "$directory"/*; do
     elif [ "$extension" == "ipynb" ]; then
         mkdir -p "$dest_folder"
         cp $PAGEJS_TEMPLATE "$dest_folder/page.js"
-        #jupyter nbconvert -y --output-dir=$dest_folder --to html --template=colab_web_tpl/tpl --theme=dark --output jupyter.html $file
+        jupyter nbconvert -y --output-dir=$dest_folder --to html --template=colab_web_tpl/tpl --theme=dark --output jupyter.html $file
     fi
   fi
 done
