@@ -1,5 +1,5 @@
 #!/usr/bin/bash
 
 git clone https://github.com/podemosaprender/colab_web_tpl.git
-git clone https://github.com/podemosaprender/nextjs-github.git
+git clone https://github.com/Stradex/nextjs-github-ui
 echo "PREPARE OK"
