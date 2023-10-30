@@ -57,7 +57,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
       - name: Run build script
-        run: _build/build.sh
+        run: _build/build_collab_mark.sh
       - name: Install Site Dependencies
         run: _build/site_dependencies.sh
       - name: Compile NextJS
