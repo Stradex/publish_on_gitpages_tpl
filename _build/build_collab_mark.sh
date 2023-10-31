@@ -37,7 +37,7 @@ for file in "$directory"/*; do
     elif [ "$extension" == "ipynb" ]; then
         mkdir -p "$dest_folder"
         cp $PAGEJS_TEMPLATE "$dest_folder/page.js"
-        jupyter nbconvert -y --output-dir=$dest_folder --to html --output jupyter.html $file
+        jupyter nbconvert -y --output-dir=$dest_folder --to html --template=../colab_web_tpl/tpl --theme=dark --output jupyter.html $file
     fi
   fi
 done
