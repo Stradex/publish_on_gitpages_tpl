@@ -3,12 +3,12 @@
 # Installing jupyter nbconvert so we can convert Google Collab files into html
 pip install jupyter nbconvert
 
-LOCAL_POSTS="`pwd`/articulos/*"
+LOCAL_POSTS="`pwd`/articulos"
 NEXTJS_POSTS="`pwd`/site/src/app/articulos"
 PAGEJS_TEMPLATE="`pwd`/site/src/app/_blog_template.js"
 
 # Copying files from local articulos folder into NextJS project articulos folder
-cp -r "$LOCAL_POSTS" $NEXTJS_POSTS
+cp -r "$LOCAL_POSTS"/* "$NEXTJS_POSTS"
 
 # Check if the target is not a directory
 if [ ! -d "$NEXTJS_POSTS" ]; then
