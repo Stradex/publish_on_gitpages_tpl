@@ -3,7 +3,7 @@
 # Installing jupyter nbconvert so we can convert Google Collab files into html
 pip install jupyter nbconvert
 
-LOCAL_POSTS="`pwd`/articulos/*"
+LOCAL_POSTS="`pwd`/articulos/."
 NEXTJS_POSTS="`pwd`/site/src/app/articulos"
 PAGEJS_TEMPLATE="`pwd`/site/src/app/_blog_template.js"
 
