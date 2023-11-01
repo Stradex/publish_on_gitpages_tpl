@@ -56,10 +56,10 @@ jobs:
           # If source files changed but packages didn't, rebuild from a prior cache.
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json', '**/yarn.lock') }}-
-      - name: Run build script
-        run: _build/build_collab_mark.sh
       - name: Install Site Dependencies
         run: _build/site_dependencies.sh
+      - name: Converting files for NextJS
+        run: _build/build_collab_mark.sh
       - name: Compile NextJS
         run: _build/site_compile.sh
       - name: Upload artifact
